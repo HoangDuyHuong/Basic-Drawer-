@@ -31,29 +31,27 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = -1;
 
   final _pages = const [
-    Center(child: Text("Item 1: My profile")),
-    Center(child: Text("Item 2: Friends")),
-    Center(child: Text("Item 3: Favourite")),
-    Center(child: Text("Item 4: Edit Profile")),
+    Center(child: Text('My profile Page',style: TextStyle(fontSize: 40,fontWeight: FontWeight.w800 ,color:  Color.fromARGB(255, 225, 179, 109)),)),
+    Center(child: Text('Friends Page',style: TextStyle(fontSize: 40,fontWeight: FontWeight.w800 ,color: Color.fromARGB(255, 225, 179, 109)),)),
+    Center(child: Text('Favourite Page',style: TextStyle(fontSize: 40,fontWeight: FontWeight.w800 ,color: Color.fromARGB(255, 225, 179, 109)),)),
+    Center(child: Text('Edit Profile Page',style: TextStyle(fontSize: 40,fontWeight: FontWeight.w800 ,color: Color.fromARGB(255, 225, 179, 109)),)),
   ];
 
   void _onMenuTap(int index){
-    setState(() {
-      _selectedIndex = index;
-    });
+    setState(() => _selectedIndex = index);
     Navigator.pop(context);  
     }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: My_Drawer(onMenuTap: _onMenuTap),
+      drawer: MyDrawer(onMenuTap: _onMenuTap),
       appBar: AppBar(
         title: Text('Demo Drawer'),
         backgroundColor: const Color.fromARGB(255, 29, 209, 16),
         
       ),
       body: _selectedIndex == -1 
-      ? Center(child: Text('Home page'),)
+      ? Center(child: Text('Home page',style: TextStyle(fontSize: 40,fontWeight: FontWeight.w800 ,color: const Color.fromARGB(255, 225, 179, 109)),),)
       : _pages[_selectedIndex],
    );
   }

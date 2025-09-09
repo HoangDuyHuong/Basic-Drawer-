@@ -3,9 +3,9 @@ import 'pages/SharePage.dart';
 import 'pages/SettingsPage.dart';
 import 'pages/LogoutPage.dart';
 
-class My_Drawer extends StatelessWidget {
+class MyDrawer extends StatelessWidget {
   final Function(int) onMenuTap;
-  const My_Drawer({super.key, required this.onMenuTap});
+  const MyDrawer({super.key, required this.onMenuTap});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class My_Drawer extends StatelessWidget {
           UserAccountsDrawerHeader(accountName: Text('TH Group'), accountEmail: Text('MrH3 Classes'),
           currentAccountPicture: CircleAvatar(
             child: ClipOval(
-              child: Image.network(
+              child:  Image.network(
                 'https://static.vecteezy.com/system/resources/previews/015/550/224/original/creative-letter-th-logo-gaming-esport-with-shield-and-sword-design-ideas-vector.jpg',
               width: 90,
               height: 90,
