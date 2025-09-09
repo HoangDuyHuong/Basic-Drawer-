@@ -39,7 +39,10 @@ Option B – Named Routes
 - Avoid duplicated ListTiles—use lists + loops
 
 📸 Screenshots
+
+
 <img width="603" height="760" alt="Ảnh chụp màn hình 2025-09-09 162340" src="https://github.com/user-attachments/assets/497fe501-39e5-4f50-abea-ea30126fe13a" />
+
 
 
 
