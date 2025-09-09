@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:drawer/Drawer.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -12,12 +12,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
+      theme: ThemeData( 
       ),
       home: const MyHomePage(title: 'Drawer Demo'),
     );
   }
-}
+}   
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -28,78 +28,33 @@ class MyHomePage extends StatefulWidget {
 
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Index 0: Home', style: optionStyle),
-    Text('Index 1: Business', style: optionStyle),
-    Text('Index 2: School', style: optionStyle),
+  int _selectedIndex = -1;
+
+  final _pages = const [
+    Center(child: Text("Item 1: My profile")),
+    Center(child: Text("Item 2: Friends")),
+    Center(child: Text("Item 3: Favourite")),
+    Center(child: Text("Item 4: Edit Profile")),
   ];
-  void _onItemTapped(int index) {
+
+  void _onMenuTap(int index){
     setState(() {
       _selectedIndex = index;
     });
-  }    
+    Navigator.pop(context);  
+    }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: My_Drawer(onMenuTap: _onMenuTap),
       appBar: AppBar(
-        title: Text(widget.title),
-        leading: Builder(
-          builder: (context) {
-            return IconButton(
-              icon: const Icon(Icons.menu),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-            );
-          }
-        ),
+        title: Text('Demo Drawer'),
+        backgroundColor: const Color.fromARGB(255, 29, 209, 16),
+        
       ),
-      body: Center(child: _widgetOptions[_selectedIndex]),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(color: Color.fromARGB(255, 75, 136, 226)),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: const Text('Home'),
-              selected: _selectedIndex == 0,
-              onTap: () {
-                // Update the state of the app
-                _onItemTapped(0);
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Business'),
-              selected: _selectedIndex == 1,
-              onTap: () {
-                // Update the state of the app
-                _onItemTapped(1);
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('School'),
-              selected: _selectedIndex == 2,
-              onTap: () {
-                // Update the state of the app
-                _onItemTapped(2);
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
-    );
+      body: _selectedIndex == -1 
+      ? Center(child: Text('Home page'),)
+      : _pages[_selectedIndex],
+   );
   }
-
 }
