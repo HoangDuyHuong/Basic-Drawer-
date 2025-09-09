@@ -11,6 +11,7 @@ A simple Flutter project showing how to implement a Drawer menu with clean struc
 + Easy to extend—add new menu items without repeating code
   
 📁 Structure
+
 <img width="334" height="288" alt="image" src="https://github.com/user-attachments/assets/240a5cda-d3c8-4c59-bc4a-d9538da8ab07" />
 
 
@@ -37,4 +38,5 @@ Option B – Named Routes
 
 📸 Screenshots
 <img width="603" height="760" alt="Ảnh chụp màn hình 2025-09-09 162340" src="https://github.com/user-attachments/assets/497fe501-39e5-4f50-abea-ea30126fe13a" />
+
 
