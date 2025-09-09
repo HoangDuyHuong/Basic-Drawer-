@@ -16,7 +16,9 @@ A simple Flutter project showing how to implement a Drawer menu with clean struc
 
 
 🚀 Run the Project
+
 flutter pub get
+
 flutter run
 
 🧭 Navigation Styles
@@ -38,5 +40,6 @@ Option B – Named Routes
 
 📸 Screenshots
 <img width="603" height="760" alt="Ảnh chụp màn hình 2025-09-09 162340" src="https://github.com/user-attachments/assets/497fe501-39e5-4f50-abea-ea30126fe13a" />
+
 
 
